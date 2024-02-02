@@ -1,4 +1,4 @@
-module github.com/AllenDang/cimgui-go
+module github.com/zhangt58/cimgui-go
 
 go 1.21
 
