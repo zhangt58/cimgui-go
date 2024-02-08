@@ -21,7 +21,7 @@
 #endif
 
 #define MAX_EXTRA_FRAME_COUNT 900;
-unsigned int glfw_target_fps = 30;
+unsigned int glfw_target_fps = 60;
 int extra_frame_count = MAX_EXTRA_FRAME_COUNT;
 
 ImVec4 clear_color = *ImVec4_ImVec4_Float(0.45, 0.55, 0.6, 1.0);
@@ -198,19 +198,19 @@ void igGLFWRunLoop(GLFWwindow *window, VoidCallback loop, VoidCallback beforeRen
 
     glfw_render(window, loop);
 
-    while (glfwGetTime() < lasttime + 1.0 / glfw_target_fps) {
-      // do nothing here
-    }
-    lasttime += 1.0 / glfw_target_fps;
-
-    if (extra_frame_count > 0) {
-      extra_frame_count--;
-      printf("Extra frame for idle left %d\n", extra_frame_count);
-    } else {
-      glfwWaitEvents();
-      printf("Idle timeout in 30 s... %f\n", lasttime);
-      extra_frame_count = MAX_EXTRA_FRAME_COUNT;
-    }
+//    while (glfwGetTime() < lasttime + 1.0 / glfw_target_fps) {
+//      // do nothing here
+//    }
+//    lasttime += 1.0 / glfw_target_fps;
+//
+//    if (extra_frame_count > 0) {
+//      extra_frame_count--;
+//      // printf("Extra frame for idle left %d\n", extra_frame_count);
+//    } else {
+//      glfwWaitEvents();
+//      // printf("Idle timeout in 30 s... %f\n", lasttime);
+//      extra_frame_count = MAX_EXTRA_FRAME_COUNT;
+//    }
 
     glfwPollEvents();
 
